@@ -1,0 +1,88 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  type?: 'website' | 'article';
+  publishedTime?: Date;
+  modifiedTime?: Date;
+  jsonLd?: object[];
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  type = 'website',
+  publishedTime,
+  modifiedTime,
+  jsonLd = [],
+  noindex = false,
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+
+const siteLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'The UK Punter',
+  url: Astro.site?.toString(),
+  description:
+    'Independent comparisons and guides to UKGC-licensed online casinos for UK players.',
+  inLanguage: 'en-GB',
+};
+
+const orgLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'The UK Punter',
+  url: Astro.site?.toString(),
+  logo: new URL('/favicon.svg', Astro.site).toString(),
+};
+
+const allLd = [siteLd, orgLd, ...jsonLd];
+---
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <meta name="rating" content="adult" />
+
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content="The UK Punter" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content="en_GB" />
+    {publishedTime && (
+      <meta property="article:published_time" content={publishedTime.toISOString()} />
+    )}
+    {modifiedTime && (
+      <meta property="article:modified_time" content={modifiedTime.toISOString()} />
+    )}
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(allLd)} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

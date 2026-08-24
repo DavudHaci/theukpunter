@@ -1,0 +1,94 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const compare = (await getCollection('compare')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+const guides = (await getCollection('guides')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+<BaseLayout
+  title="The UK Punter — Independent UKGC Casino Comparisons & Guides"
+  description="Compare UKGC-licensed casinos by payout speed, PayPal support, minimum deposit and RTP. Independent, data-driven guides for UK players. 18+."
+>
+  <section class="hero">
+    <div class="container">
+      <h1>Find the right UK casino — compared on the things that actually matter</h1>
+      <p class="lead">
+        Payout speed, real RTP figures, deposit limits and bonus terms — tested and compared
+        across UKGC-licensed sites only. No hype, no unlicensed operators.
+      </p>
+      <a class="hero-cta" href="/fastest-withdrawal-casinos-uk/">Compare fastest payouts</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Casino comparisons</h2>
+      <p class="section-sub">
+        High-intent comparisons for UK players, updated whenever terms change.
+      </p>
+      <div class="card-grid">
+        {compare.map((page) => (
+          <div class="card">
+            <span class="card-tag">Comparison</span>
+            <h3><a href={`/${page.id}/`}>{page.data.h1}</a></h3>
+            <p>{page.data.description}</p>
+            <a class="card-link" href={`/${page.id}/`}>Read the comparison &rarr;</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft">
+    <div class="container">
+      <h2 class="section-title">Guides for UK players</h2>
+      <p class="section-sub">
+        Plain-English answers to the questions UK players actually search for.
+      </p>
+      <div class="card-grid">
+        {guides.map((guide) => (
+          <div class="card">
+            <span class="card-tag">Guide</span>
+            <h3><a href={`/guides/${guide.id}/`}>{guide.data.h1}</a></h3>
+            <p>{guide.data.description}</p>
+            <a class="card-link" href={`/guides/${guide.id}/`}>Read the guide &rarr;</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Why trust The UK Punter?</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>UKGC-licensed only</h3>
+          <p>
+            Every operator we feature holds a UK Gambling Commission licence. That means your
+            funds are protected, games are independently tested, and you have access to free
+            dispute resolution.
+          </p>
+        </div>
+        <div class="card">
+          <h3>We test with real deposits</h3>
+          <p>
+            Withdrawal times, verification steps and bonus terms are checked with real accounts
+            and real money — not copied from a press release.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Safer gambling first</h3>
+          <p>
+            We explain stake limits, deposit limits and self-exclusion honestly. Gambling is
+            entertainment, not income — and we never pretend otherwise.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

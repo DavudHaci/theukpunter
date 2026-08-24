@@ -1,0 +1,32 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const guides = (await getCollection('guides')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+<BaseLayout
+  title="UK Online Casino Guides — RTP, Withdrawals, Bonuses Explained"
+  description="Plain-English guides for UK casino players: withdrawal times, RTP, wagering requirements, stake limits and how to check a UKGC licence. 18+."
+>
+  <section class="section">
+    <div class="container">
+      <h1 class="section-title">Guides for UK casino players</h1>
+      <p class="section-sub">
+        Everything explained in plain English — no jargon, no sales pitch, just the facts UK
+        players need before depositing.
+      </p>
+      <div class="card-grid">
+        {guides.map((guide) => (
+          <div class="card">
+            <span class="card-tag">Guide</span>
+            <h3><a href={`/guides/${guide.id}/`}>{guide.data.h1}</a></h3>
+            <p>{guide.data.description}</p>
+            <a class="card-link" href={`/guides/${guide.id}/`}>Read the guide &rarr;</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
