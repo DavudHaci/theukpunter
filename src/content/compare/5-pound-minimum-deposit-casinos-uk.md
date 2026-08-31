@@ -5,6 +5,10 @@ h1: "£5 Minimum Deposit Casinos in the UK"
 targetKeyword: "£5 minimum deposit casino uk"
 pubDate: 2026-08-24
 order: 2
+related:
+  - compare/no-wagering-bonus-casinos-uk
+  - compare/high-rtp-slots-uk
+  - guides/casino-wagering-requirements-explained
 faq:
   - question: "Can I get a casino bonus with a £5 deposit?"
     answer: "Sometimes. Most UK welcome bonuses require a £10 or £20 minimum deposit, but a growing number of operators offer free spins on a £5 deposit. Always check the minimum qualifying deposit in the bonus terms before paying in."

@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FaqBlock from '../components/FaqBlock.astro';
+import RelatedPages from '../components/RelatedPages.astro';
 
 export async function getStaticPaths() {
   const pages = await getCollection('compare');
@@ -73,6 +74,7 @@ if (faq.length > 0) {
       <Content />
     </div>
     <FaqBlock faq={faq} />
+    <RelatedPages related={page.data.related} />
     <div class="callout rg">
       <strong>Safer gambling:</strong> set deposit limits before you play, never chase losses,
       and use <a href="https://www.gamstop.co.uk" rel="noopener nofollow">GamStop</a> if you need

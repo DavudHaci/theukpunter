@@ -1,0 +1,40 @@
+---
+import { getEntry } from 'astro:content';
+
+interface Props {
+  /** Entries as "compare/slug" or "guides/slug". Falls back to nothing if empty. */
+  related: string[];
+}
+
+const { related } = Astro.props;
+
+const entries = (
+  await Promise.all(
+    related.map(async (ref) => {
+      const [collection, ...rest] = ref.split('/');
+      const id = rest.join('/');
+      if (collection !== 'compare' && collection !== 'guides') return null;
+      const entry = await getEntry(collection, id);
+      if (!entry) return null;
+      const href = collection === 'compare' ? `/${id}/` : `/guides/${id}/`;
+      const tag = collection === 'compare' ? 'Comparison' : 'Guide';
+      return { href, tag, h1: entry.data.h1, description: entry.data.description };
+    })
+  )
+).filter((entry) => entry !== null);
+---
+{entries.length > 0 && (
+  <section class="related-block" aria-label="Related reading">
+    <h2>Related reading</h2>
+    <div class="card-grid">
+      {entries.map((entry) => (
+        <div class="card">
+          <span class="card-tag">{entry.tag}</span>
+          <h3><a href={entry.href}>{entry.h1}</a></h3>
+          <p>{entry.description}</p>
+          <a class="card-link" href={entry.href}>Read more &rarr;</a>
+        </div>
+      ))}
+    </div>
+  </section>
+)}

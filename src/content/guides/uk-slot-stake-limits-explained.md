@@ -4,6 +4,10 @@ description: "The UK's online slot stake limits explained: £5 cap for adults, �
 h1: "UK Slot Stake Limits Explained: the £2 and £5 Caps"
 targetKeyword: "uk slot stake limit"
 pubDate: 2026-08-24
+related:
+  - compare/high-rtp-slots-uk
+  - compare/no-wagering-bonus-casinos-uk
+  - guides/how-to-check-ukgc-licence
 faq:
   - question: "What is the maximum stake on online slots in the UK?"
     answer: "£5 per spin for players aged 25 and over, and £2 per spin for players aged 18–24. The caps took effect in April and May 2025 respectively and apply to every UKGC-licensed casino."

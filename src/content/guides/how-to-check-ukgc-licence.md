@@ -4,6 +4,10 @@ description: "Step-by-step: verify any casino on the UK Gambling Commission regi
 h1: "How to Check a Casino's UKGC Licence in Two Minutes"
 targetKeyword: "check ukgc licence casino"
 pubDate: 2026-08-24
+related:
+  - guides/how-long-do-casino-withdrawals-take-uk
+  - guides/uk-slot-stake-limits-explained
+  - compare/fastest-withdrawal-casinos-uk
 faq:
   - question: "How do I know if a casino is UKGC licensed?"
     answer: "Search the operator's company name (from the site footer) on the UK Gambling Commission's public register at gamblingcommission.gov.uk. The register entry must show 'remote casino' activity with an active status, and the domain you're playing on should be listed under the account."

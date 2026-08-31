@@ -242,6 +242,21 @@ h3 { font-size: 1.2rem; }
 .faq-item[open] summary::after { content: "\2212"; }
 .faq-item .faq-answer { padding: 0.9rem 1.1rem; }
 
+/* ---------- Related pages ---------- */
+.related-block { margin-top: 2.5rem; }
+.related-block h2 {
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 0.3rem;
+  display: inline-block;
+}
+.related-block .card-grid {
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 1rem;
+}
+.related-block .card { padding: 1.1rem 1.1rem 1rem; }
+.related-block .card h3 { font-size: 1.02rem; }
+.related-block .card p { font-size: 0.85rem; }
+
 /* ---------- Callouts ---------- */
 .callout {
   border-radius: var(--radius);

@@ -10,6 +10,9 @@ const faqSchema = z.object({
  * "compare" = commercial money pages (top-level URLs, high-intent long-tail keywords)
  * "guides"  = informational articles (/guides/..., low-KD queries, topical authority)
  */
+/** "compare/slug" or "guides/slug" — resolved to a card in the Related reading block */
+const relatedSchema = z.array(z.string()).default([]);
+
 const compare = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/compare' }),
   schema: z.object({
@@ -20,6 +23,7 @@ const compare = defineCollection({
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     faq: z.array(faqSchema).default([]),
+    related: relatedSchema,
     order: z.number().default(99),
   }),
 });
@@ -34,6 +38,7 @@ const guides = defineCollection({
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     faq: z.array(faqSchema).default([]),
+    related: relatedSchema,
   }),
 });
 
