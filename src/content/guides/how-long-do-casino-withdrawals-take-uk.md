@@ -55,7 +55,7 @@ The pattern is clear: the **payment network is rarely the bottleneck**. The casi
 - **Use PayPal or another e-wallet** — consistently the fastest end-to-end ([compare PayPal casinos](/best-paypal-casinos-uk/))
 - **Withdraw to your deposit method** — anything else invites manual review
 - **Never reverse a withdrawal** — it resets the queue and is a recognised risky-play pattern
-- **Pick operators that have proven fast** — we time real payouts monthly in our [fastest withdrawal comparison](/fastest-withdrawal-casinos-uk/)
+- **Pick operators with clean published policies** — we compare them in our [fastest withdrawal comparison](/fastest-withdrawal-casinos-uk/)
 
 ## Your rights if a payout stalls
 

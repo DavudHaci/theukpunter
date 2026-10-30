@@ -242,6 +242,40 @@ h3 { font-size: 1.2rem; }
 .faq-item[open] summary::after { content: "\2212"; }
 .faq-item .faq-answer { padding: 0.9rem 1.1rem; }
 
+/* ---------- Brand cards ---------- */
+.brand-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.brand-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.15s;
+}
+.brand-card:hover { box-shadow: 0 8px 24px rgba(15, 30, 51, 0.1); }
+.brand-card h3 { margin: 0 0 0.15rem; font-size: 1.1rem; }
+.brand-card .brand-meta {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 0.5rem;
+}
+.brand-card p { margin: 0 0 0.75rem; font-size: 0.9rem; color: var(--text-muted); flex: 1; }
+.brand-card a { font-weight: 600; font-size: 0.85rem; }
+.brand-note {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 1.25rem;
+}
+
 /* ---------- Related pages ---------- */
 .related-block { margin-top: 2.5rem; }
 .related-block h2 {
