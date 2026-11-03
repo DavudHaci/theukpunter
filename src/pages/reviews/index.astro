@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const reviews = (await getCollection('reviews')).sort((a, b) => a.data.order - b.data.order);
+---
+<BaseLayout
+  title="UK Casino Reviews 2026 — Independent UKGC Operator Reviews"
+  description="Independent reviews of UKGC-licensed casino operators: licence details, payments, bonuses and safer gambling tools at each third-party site. 18+."
+>
+  <section class="section">
+    <div class="container">
+      <h1 class="section-title">UK casino operator reviews</h1>
+      <p class="section-sub">
+        Independent reviews of third-party, UKGC-licensed gambling operators. The UK Punter is a
+        comparison website only — no betting or gaming takes place on this site.
+      </p>
+      <div class="card-grid">
+        {reviews.map((review) => (
+          <div class="card">
+            <span class="card-tag">Operator review</span>
+            <h3><a href={`/reviews/${review.id}/`}>{review.data.operator}</a></h3>
+            <p>{review.data.description}</p>
+            <a class="card-link" href={`/reviews/${review.id}/`}>Read the review &rarr;</a>
+          </div>
+        ))}
+      </div>
+      <p class="brand-note">
+        18+. All operators reviewed hold an active UK Gambling Commission licence. Details
+        reflect published terms at the time of each review's last update — always confirm on the
+        operator's own site. Please gamble responsibly.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

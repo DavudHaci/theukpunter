@@ -28,9 +28,9 @@ No wagering bonuses flip this. The offers are smaller, but **what you win is you
 
 | Casino | Licence holder (UKGC) | No-wagering approach | Winnings paid as |
 |---|---|---|---|
-| PlayOJO | SkillOnNet Ltd | All promotions wager-free as standing policy | Cash |
-| MrQ | Lindar Media Ltd | Built its brand on wager-free free spins | Cash |
-| Sky Vegas | Bonne Terre Limited | Regularly runs wager-free prize and spins promotions | Cash |
+| [PlayOJO](/reviews/playojo/) | SkillOnNet Ltd | All promotions wager-free as standing policy | Cash |
+| [MrQ](/reviews/mrq/) | Lindar Media Ltd | Built its brand on wager-free free spins | Cash |
+| [Sky Vegas](/reviews/sky-vegas/) | Bonne Terre Limited | Regularly runs wager-free prize and spins promotions | Cash |
 
 *Based on each operator's published promotion terms at the time of the last update above. Specific offers change constantly — always read the current offer's terms before claiming. 18+.*
 

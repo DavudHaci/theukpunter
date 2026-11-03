@@ -1,0 +1,108 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FaqBlock from '../../components/FaqBlock.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+
+export async function getStaticPaths() {
+  const reviews = await getCollection('reviews');
+  return reviews.map((review) => ({
+    params: { slug: review.id },
+    props: { review },
+  }));
+}
+
+const { review } = Astro.props;
+const { Content } = await render(review);
+const { title, description, h1, operator, officialUrl, licenceHolder, pubDate, updatedDate, faq } =
+  review.data;
+
+const dateFmt = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+
+const jsonLd: object[] = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    itemReviewed: {
+      '@type': 'Organization',
+      name: operator,
+      url: officialUrl,
+    },
+    name: h1,
+    description,
+    datePublished: pubDate.toISOString(),
+    dateModified: (updatedDate ?? pubDate).toISOString(),
+    inLanguage: 'en-GB',
+    author: { '@type': 'Organization', name: 'The UK Punter' },
+    publisher: { '@type': 'Organization', name: 'The UK Punter' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: Astro.site?.toString() },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Operator Reviews',
+        item: new URL('/reviews/', Astro.site).toString(),
+      },
+      { '@type': 'ListItem', position: 3, name: h1 },
+    ],
+  },
+];
+
+if (faq.length > 0) {
+  jsonLd.push({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+    })),
+  });
+}
+---
+<BaseLayout
+  title={title}
+  description={description}
+  type="article"
+  publishedTime={pubDate}
+  modifiedTime={updatedDate ?? pubDate}
+  jsonLd={jsonLd}
+>
+  <article class="article-wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a> &rsaquo; <a href="/reviews/">Operator Reviews</a> &rsaquo; {operator}
+    </nav>
+    <h1>{h1}</h1>
+    <p class="article-meta">
+      Last updated: {dateFmt.format(updatedDate ?? pubDate)} &middot; Independent third-party
+      review by The UK Punter editorial team &middot; 18+ only, please gamble responsibly
+    </p>
+    <div class="callout info">
+      <strong>{operator}</strong> is a third-party operator. The UK Punter is an independent
+      comparison website — no betting or gaming takes place on this site. Licence holder:
+      {licenceHolder}, licensed by the UK Gambling Commission.
+      <a href={officialUrl} rel="noopener nofollow" target="_blank">Visit the official {operator} website &#8599;</a>
+    </div>
+    <div class="article-body">
+      <Content />
+    </div>
+    <p>
+      <a href={officialUrl} rel="noopener nofollow" target="_blank">
+        Visit the official {operator} website &#8599;
+      </a>
+      (18+, T&amp;Cs apply — this is the operator's own site, not ours)
+    </p>
+    <FaqBlock faq={faq} />
+    <RelatedPages related={review.data.related} />
+    <div class="callout rg">
+      <strong>Safer gambling:</strong> set deposit limits before you play, never chase losses,
+      and use <a href="https://www.gamstop.co.uk" rel="noopener nofollow">GamStop</a> if you need
+      a break. Free support is available at
+      <a href="https://www.begambleaware.org" rel="noopener nofollow">BeGambleAware.org</a> (0808 8020 133).
+    </div>
+  </article>
+</BaseLayout>

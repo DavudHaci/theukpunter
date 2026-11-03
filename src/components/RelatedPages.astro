@@ -2,7 +2,7 @@
 import { getEntry } from 'astro:content';
 
 interface Props {
-  /** Entries as "compare/slug" or "guides/slug". Falls back to nothing if empty. */
+  /** Entries as "compare/slug", "guides/slug" or "reviews/slug". */
   related: string[];
 }
 
@@ -13,11 +13,13 @@ const entries = (
     related.map(async (ref) => {
       const [collection, ...rest] = ref.split('/');
       const id = rest.join('/');
-      if (collection !== 'compare' && collection !== 'guides') return null;
+      if (collection !== 'compare' && collection !== 'guides' && collection !== 'reviews')
+        return null;
       const entry = await getEntry(collection, id);
       if (!entry) return null;
-      const href = collection === 'compare' ? `/${id}/` : `/guides/${id}/`;
-      const tag = collection === 'compare' ? 'Comparison' : 'Guide';
+      const href = collection === 'compare' ? `/${id}/` : `/${collection}/${id}/`;
+      const tag =
+        collection === 'compare' ? 'Comparison' : collection === 'reviews' ? 'Review' : 'Guide';
       return { href, tag, h1: entry.data.h1, description: entry.data.description };
     })
   )

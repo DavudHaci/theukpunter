@@ -28,10 +28,10 @@ Here's how the major UKGC-licensed live casinos compare on studios, stakes and t
 
 | Casino | Licence holder (UKGC) | Studio partners | Live range |
 |---|---|---|---|
-| Grosvenor Casino | Rank Digital Gaming | Evolution | Strong UK-facing roulette and blackjack; high-street casino heritage |
-| bet365 Casino | Hillside (UK New Media) group | Evolution, Playtech | One of the widest live lobbies in the UK market |
+| [Grosvenor Casino](/reviews/grosvenor-casino/) | Rank Digital Gaming | Evolution | Strong UK-facing roulette and blackjack; high-street casino heritage |
+| [bet365 Casino](/reviews/bet365-casino/) | Hillside (UK New Media) group | Evolution, Playtech | One of the widest live lobbies in the UK market |
 | 888casino | 888 UK Limited | Evolution | Branded exclusive tables alongside standard lobby |
-| William Hill | WHG (International) group | Evolution, Playtech | Large blackjack spread plus game shows |
+| [William Hill](/reviews/william-hill/) | WHG (International) group | Evolution, Playtech | Large blackjack spread plus game shows |
 
 *Based on each operator's published live casino lobby at the time of the last update above. Table availability and limits change — check the lobby before depositing. 18+.*
 

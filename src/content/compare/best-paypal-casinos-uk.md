@@ -28,11 +28,11 @@ Below are established UK brands that publish PayPal support in their cashiers.
 
 | Casino | Licence holder (UKGC) | PayPal deposits & withdrawals | Published min. deposit | Known for |
 |---|---|---|---|---|
-| bet365 Casino | Hillside (UK New Media) group | Yes | £5 | Broad game library, long-established payments team |
-| Sky Vegas | Bonne Terre Limited | Yes | £5 | Wager-free promotions, household-name brand |
-| Betfair Casino | PPB Entertainment group | Yes | £5–£10 | Exchange heritage, wide live casino range |
-| William Hill | WHG (International) group | Yes | £10 | High-street heritage, large table selection |
-| Virgin Games | Gamesys Operations group | Yes | £10 | Community promotions, casual-friendly design |
+| [bet365 Casino](/reviews/bet365-casino/) | Hillside (UK New Media) group | Yes | £5 | Broad game library, long-established payments team |
+| [Sky Vegas](/reviews/sky-vegas/) | Bonne Terre Limited | Yes | £5 | Wager-free promotions, household-name brand |
+| [Betfair Casino](/reviews/betfair-casino/) | PPB Entertainment group | Yes | £5–£10 | Exchange heritage, wide live casino range |
+| [William Hill](/reviews/william-hill/) | WHG (International) group | Yes | £10 | High-street heritage, large table selection |
+| [Virgin Games](/reviews/virgin-games/) | Gamesys Operations group | Yes | £10 | Community promotions, casual-friendly design |
 
 *Details reflect operators' published terms at the time of the last update above. Minimums and methods change — always confirm in the casino's cashier before depositing. 18+.*
 

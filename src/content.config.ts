@@ -42,4 +42,25 @@ const guides = defineCollection({
   }),
 });
 
-export const collections = { compare, guides };
+/**
+ * "reviews" = distinct third-party operator review pages (aggregator structure
+ * required by Google Ads gambling aggregator certification)
+ */
+const reviews = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/reviews' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string().max(165),
+    h1: z.string(),
+    operator: z.string(),
+    officialUrl: z.string().url(),
+    licenceHolder: z.string(),
+    pubDate: z.coerce.date(),
+    updatedDate: z.coerce.date().optional(),
+    faq: z.array(faqSchema).default([]),
+    related: relatedSchema,
+    order: z.number().default(99),
+  }),
+});
+
+export const collections = { compare, guides, reviews };

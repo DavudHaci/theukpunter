@@ -28,10 +28,10 @@ This page compares what major UKGC-licensed operators actually publish, alongsid
 
 | Casino | Licence holder (UKGC) | Published approach | E-wallet payouts | Notes |
 |---|---|---|---|---|
-| PlayOJO | SkillOnNet Ltd | Markets "no pending period" withdrawals | PayPal supported | Known for plain-terms policies |
-| bet365 Casino | Hillside (UK New Media) group | Publishes method-by-method processing times | PayPal supported | Long-established payments operation |
-| Sky Vegas | Bonne Terre Limited | Standard processing, e-wallets quickest | PayPal supported | Part of major UK group |
-| Betfair Casino | PPB Entertainment group | Standard processing, e-wallets quickest | PayPal supported | Shares payments stack with Paddy Power |
+| [PlayOJO](/reviews/playojo/) | SkillOnNet Ltd | Markets "no pending period" withdrawals | PayPal supported | Known for plain-terms policies |
+| [bet365 Casino](/reviews/bet365-casino/) | Hillside (UK New Media) group | Publishes method-by-method processing times | PayPal supported | Long-established payments operation |
+| [Sky Vegas](/reviews/sky-vegas/) | Bonne Terre Limited | Standard processing, e-wallets quickest | PayPal supported | Part of major UK group |
+| [Betfair Casino](/reviews/betfair-casino/) | PPB Entertainment group | Standard processing, e-wallets quickest | PayPal supported | Shares payments stack with Paddy Power |
 
 *Based on each operator's published payment pages and terms at the time of the last update above. Policies change — always check the operator's own withdrawal page. 18+.*
 

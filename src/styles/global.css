@@ -270,6 +270,12 @@ h3 { font-size: 1.2rem; }
 }
 .brand-card p { margin: 0 0 0.75rem; font-size: 0.9rem; color: var(--text-muted); flex: 1; }
 .brand-card a { font-weight: 600; font-size: 0.85rem; }
+.brand-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
 .brand-note {
   font-size: 0.82rem;
   color: var(--text-muted);
